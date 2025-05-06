@@ -5,4 +5,4 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://utkarsh-singhal.tech/sitemap.xml
+Sitemap: https://roshanvrazak.co.uk/sitemap.xml
