@@ -96,6 +96,29 @@ export const DATA = {
       TECH_STACK: ["Proxmox", "Terraform", "Docker", "Jenkins", "Ollama", "Cloudflare Tunnels", "Nginx"],
       HIDDEN: false,
     },
+    "DayPlanner — Intelligent Task Management System": {
+      SLUG: "day-planner",
+      GITHUB: "https://github.com/roshanvrazak/DayPlanner",
+      DESCRIPTION: [
+        "**Full-Stack Architecture:** Developed a comprehensive day planning application using Next.js and TypeScript, focusing on high-performance task management and user productivity.",
+        "**Database & ORM:** Integrated Prisma ORM with PostgreSQL to handle complex task relations, ensuring efficient data persistence and type-safe database queries.",
+        "**Containerised Deployment:** Fully Dockerised the application with custom multi-stage Dockerfiles and docker-compose configurations for seamless development and production parity.",
+      ],
+      TECH_STACK: ["Next.js", "TypeScript", "Prisma", "PostgreSQL", "Docker", "Tailwind CSS"],
+      HIDDEN: false,
+    },
+    "Professional AI Portfolio — Modern & Minimalist": {
+      SLUG: "portfolio",
+      GITHUB: "https://github.com/roshanvrazak/portfolio",
+      LIVE_PREVIEW: "https://roshanvrazak.co.uk",
+      DESCRIPTION: [
+        "**High-Performance Frontend:** Built a state-of-the-art portfolio using Next.js 15 and TypeScript, achieving exceptional performance scores and smooth client-side transitions.",
+        "**Modern UI/UX:** Implemented a minimalist, dark-themed design system using shadcn/ui and Tailwind CSS, featuring subtle Framer Motion animations for a premium user experience.",
+        "**Deployment & Infrastructure:** Automated deployment via Vercel with integrated SEO best practices, meta-tag optimization, and dynamic sitemap generation.",
+      ],
+      TECH_STACK: ["Next.js 15", "TypeScript", "Shadcn/UI", "Tailwind CSS", "Framer Motion", "Vercel"],
+      HIDDEN: false,
+    },
   },
 
   EDUCATION: [
@@ -130,10 +153,10 @@ export const DATA = {
       "pgvector", "ChromaDB", "Embedding Models", "Semantic Search",
     ],
     "Backend & Web": [
-      "FastAPI", "Spring Boot", "ReactJS", "Laravel", "Django", "REST APIs",
+      "Next.js", "ReactJS", "FastAPI", "Spring Boot", "Laravel", "Django", "shadcn/ui", "REST APIs",
     ],
     "Databases": [
-      "PostgreSQL", "MySQL", "Redis", "DynamoDB",
+      "PostgreSQL", "Prisma", "MySQL", "Redis", "DynamoDB",
     ],
     "DevOps & Infrastructure": [
       "Docker", "Kubernetes", "Terraform", "Jenkins", "GitHub Actions", "AWS Lambda", "S3", "EC2", "Bedrock", "CI/CD",
