@@ -51,7 +51,7 @@ export function Experience({
               <ul className="mt-4 list-disc space-y-1 pl-3 text-sm text-muted-foreground text-justify">
                 {value.DESCRIPTION.map((desc, index) => (
                   <li key={index}>
-                    <span>{desc}</span>
+                    <span dangerouslySetInnerHTML={{ __html: desc.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>') }} />
                   </li>
                 ))}
               </ul>

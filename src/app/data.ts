@@ -19,8 +19,8 @@ export const DATA = {
     AGE: "Software Developer",
     PRONOUN: "United Kingdom",
     HEADLINE:
-      "Full-stack developer with a passion for building efficient, scalable, and intuitive applications.",
-    RESUME: "https://drive.google.com/file/d/1I8SyH9ti-mj7vGoQzKYp60pxsKIWIuKF/",
+      "Software Developer — I build clean, reliable applications in Java, Python, and JavaScript and care deeply about code that is easy to test and maintain.",
+    RESUME: "/roshan-razak.pdf",
     EMAIL: "mailto:roshan.razak@outlook.com",
     GITHUB: "https://github.com/roshanvrazak",
     LINKEDIN: "https://www.linkedin.com/in/roshan-razak",
@@ -28,10 +28,10 @@ export const DATA = {
 
   ABOUT_ME: {
     INTRO:
-      "Hey! I'm a full-stack developer who loves building efficient, scalable, and intuitive applications. I thrive on solving complex problems, optimizing performance, and creating seamless user experiences.",
+      "I am a Software Developer with commercial experience in building and optimizing backend services and full-stack applications. I hold an MSc in Software Engineering and am driven by a commitment to clean, maintainable, and well-tested code.",
     EXPERTISE:
-      "My expertise lies in Java, Spring Boot AWS cloud-based solutions and DevOps. I enjoy working across the stack to bring ideas to life.",
-    BLOG: "I would love publishing blogs and sharing insights on web development, best practices, and new technologies.",
+      "My technical foundation is built on Java, Python, and JavaScript, with strong experience in Spring Boot, ReactJS, and AWS. I focus on delivering reliable features, improving system performance, and applying robust testing practices.",
+    BLOG: "I am always eager to learn and contribute to a collaborative team. Beyond core development, I maintain a strong interest in infrastructure, containerization, and continuous integration.",
   },
 
 
@@ -39,161 +39,117 @@ export const DATA = {
   EXPERIENCE: {
     "Cawosh Ltd": {
       WEBSITE: "https://cawosh.com",
-      POSITION: "Software Developer (Freelance)",
+      POSITION: "Software Engineer",
       LOCATION: "United Kingdom",
-      DURATION: "Jan 2025 – Present",
+      DURATION: "Aug 2024 – Present",
       DESCRIPTION: [
-        "Built a full-stack web application for scheduling car maintenance services using Java, Spring Boot, React.js, and AWS",
-        "Designed and implemented RESTful APIs for managing customer bookings, vehicle history tracking, and service recommendations",
-        "Integrated JWT/OAuth authentication for secure user access and ensured GDPR compliance for data privacy",
-        "Developed AI-driven service recommendations based on vehicle diagnostics and historical data",
-        "Set up business analytics dashboards to track service trends, peak hours, and customer preferences.",
-        "Collaborated with founders and business teams to prioritize features and optimize user experience.",
-        "Worked in an Agile environment, participating in sprint planning, code reviews, and rapid prototyping.",
+        "**Feature Development:** Develop and maintain AWS-native backend services in Python and JavaScript, contributing to feature delivery and bug fixes across the full development lifecycle.",
+        "**Code Quality:** Standardised TypeScript across all frontend modules, eliminating a class of runtime undefined errors and reducing client-side rendering bugs by 30%.",
+        "**Testing:** Write and maintain unit and integration tests across sprint cycles, improving deployment confidence and reducing regression risk.",
+        "**Collaboration:** Work closely with senior engineers to clarify requirements, participate in regular code reviews, and keep technical documentation up to date for all assigned modules.",
+        "**Performance Fix:** Identified and resolved a bottleneck in a serverless data pipeline (AWS Lambda), cutting monthly infrastructure costs by 45% with no loss in processing speed.",
+        "**Security:** Automated secrets rotation via AWS IAM, removing manual steps and keeping the platform audit-ready for financial compliance reviews."
       ],
-      TECH_STACK: [
-        "Java",
-        "Spring Boot",
-        "Spring AI",
-        "DynamoDB",
-        "React.js",
-        "AWS",
-        "JWT",
-        "OAuth",
-        "Agile",
-      ],
+      TECH_STACK: ["Python", "JavaScript", "TypeScript", "AWS Lambda", "AWS"],
     },
     "Capgemini Engineering": {
       WEBSITE: "https://www.capgemini.com",
-      POSITION: "Associate Consultant / Java Developer",
+      POSITION: "Associate Consultant",
       LOCATION: "India",
       DURATION: "Oct 2018 – Feb 2023",
       DESCRIPTION: [
-        "Built and maintained enterprise-grade Java applications, improving system reliability and performance.",
-        "Utilized Spring Boot and Microservices architecture to increase application modularity and deployment efficiency",
-        "Optimized MySQL database operations, enhancing data integrity and reducing query time.",
-        "Led a team of developers, fostering a culture of collaboration, mentorship, and timely delivery of projects.",
-        "Implemented CI/CD pipelines using Jenkins and Docker, streamlining deployment processes and reducing downtime.",
-        "Conducted code reviews and provided constructive feedback to ensure adherence to best practices and coding standards.",
-        "Participated in Agile ceremonies, including sprint planning, daily stand-ups, and retrospectives.",
-        "Collaborated with cross-functional teams to gather requirements and deliver high-quality software solutions.",
-        "Developed and maintained RESTful APIs, ensuring seamless integration with front-end applications.",
-        "Implemented unit and integration tests using JUnit and Mockito, ensuring code quality and reliability.",
-        "Mentored junior developers, shared knowledge, and facilitated cross-functional collaboration.",
-        "Recognized with the STAR Award and promoted early for outstanding contributions and leadership.",
-
+        "**Backend Development:** Built and maintained Java / Spring Boot microservices for high-volume financial transaction processing, resolving a critical sequencing bug that caused data drift.",
+        "**Database Optimisation:** Re-architected long-running PostgreSQL queries for a global banking client, improving data retrieval speeds by 40% through strategic indexing.",
+        "**Reliability:** Redesigned a failing legacy synchronisation task into a resilient background process, reducing system downtime by 15% and eliminating manual database interventions.",
+        "**Testing Culture:** Established JUnit test suites and coding standards adopted team-wide, reducing production-level bugs by 25% within 18 months.",
+        "**Agile Delivery:** Participated in sprint ceremonies, peer code reviews, and maintained service documentation throughout the SDLC. Awarded STAR Performer recognition."
       ],
-      TECH_STACK: [
-        "Java",
-        "Spring MVC",
-        "Spring Boot",
-        "Microservices",
-        "MySQL",
-        "Jenkins",
-        "Docker",
-        "JUnit",
-        "Mockito",
-        "Agile",
-        "Scrum",
-        "PostgreSQL",
-        "Oracle",
-        "REST APIs",
-        "Git",
-        "GitHub",
-      ],
-    },
-    "Cybrosis Techonolgies Pvt LTD": {
-      WEBSITE: "https://www.cybrosys.com/",
-      POSITION: "Software Developer Intern (Java)",
-      LOCATION: "India",
-      DURATION: "Jun 2017 – Dec 2017",
-      DESCRIPTION: [
-        "Developed full-stack web applications using Java EE and Spring MVC framework.",
-        "Designed relational databases with MySQL and optimized SQL queries for CRUD operations.",
-        "Implemented REST APIs following MVC architecture for an enterprise inventory management system.",
-        "Gained proficiency in Core Java, Spring Framework, and Software Design Patterns.",
-      ],
-      TECH_STACK: ["Java EE", "Spring MVC", "MySQL", "REST APIs"],
+      TECH_STACK: ["Java", "Spring Boot", "Microservices", "PostgreSQL", "JUnit", "TDD"],
     },
   },
 
   PROJECTS: {
-    "Smart Access Control System": {
-      SLUG: "smart-access-control",
+    "Spring Boot Fashion Store": {
+      SLUG: "spring-boot-fashion-store",
+      GITHUB: "https://github.com/roshanvrazak/spring-boot-fashion-store",
       DESCRIPTION: [
-        "Proposed a smart access control system integrating ID card access with facial recognition for enhanced security.",
-        "Designed multi-factor authentication using Amazon Rekognition and managed user access with AWS Cognito.",
-        "Implemented secure data storage (Amazon S3, DynamoDB) and serverless processing with AWS Lambda.",
+        "Built a full-stack e-commerce application using Java / Spring Boot for the REST API backend and ReactJS for the frontend, featuring product browsing, cart management, and order processing.",
+        "Implemented MySQL for relational data storage, JUnit unit tests for core service logic, and Git-based version control throughout the development lifecycle."
       ],
-      TECH_STACK: ["AWS", "Amazon Rekognition", "AWS Cognito", "Lambda"],
+      TECH_STACK: ["Java", "ReactJS", "MySQL", "JUnit", "REST API", "Spring Boot"],
       HIDDEN: false,
     },
-    "Tool Hire Review Management System": {
-      SLUG: "tool-hire-review",
+    "Tool Hire Review Platform": {
+      SLUG: "tool-hire-review-platform",
+      GITHUB: "https://github.com/roshanvrazak/tool-hire-review-platform",
       DESCRIPTION: [
-        "Designed UI wireframes in Figma, improving UX and accessibility in a ReactJS web application.",
-        "Developed front-end components and assisted in project management using Agile methodologies.",
+        "Developed a ReactJS / Node.js web platform for submitting and browsing tool hire reviews, with a RESTful API backend, MySQL database, and user authentication.",
+        "Served as Scrum Master during development, facilitating sprint planning and daily standups."
       ],
-      TECH_STACK: ["React.js", "Figma", "Agile"],
+      TECH_STACK: ["ReactJS", "Node.js", "MySQL", "Scrum Master"],
       HIDDEN: false,
     },
-    "Fashion Store Management System": {
-      SLUG: "fashion-store-management",
+    "AWS Facial Recognition Security System": {
+      SLUG: "aws-facial-recognition-security-system",
+      GITHUB: "https://github.com/roshanvrazak/aws-facial-recognition",
       DESCRIPTION: [
-        "Developed a web-based system for managing inventory, sales, and customer workflows in online fashion retail.",
-        "Designed RESTful APIs with Java, Spring Boot, secured data with JWT, and managed MySQL database operations.",
-        "Implemented user/admin features, unit testing with JUnit, and performed API testing using Postman and Swagger UI.",
+        "Built a cloud-native security system using AWS Rekognition, Lambda, and S3 to perform real-time facial recognition and access control, with event-driven notifications via SNS."
       ],
-      TECH_STACK: ["Java", "Spring Boot", "JWT", "MySQL", "JUnit", "Postman", "OpenAPI"],
+      TECH_STACK: ["AWS Rekognition", "AWS Lambda", "S3", "SNS"],
+      HIDDEN: false,
+    },
+    "DevOps & Security Lab Personal Infrastructure": {
+      SLUG: "devops-security-lab",
+      GITHUB: "https://github.com/roshanvrazak/devops-security-lab",
+      DESCRIPTION: [
+        "Designed and deployed a private CI/CD ecosystem using Jenkins, Docker, Nexus (artifact registry), and Nginx reverse proxy with SSL termination and Cloudflare Tunnels for secure remote access."
+      ],
+      TECH_STACK: ["Jenkins", "Docker", "Nexus", "Nginx", "Cloudflare Tunnels"],
       HIDDEN: false,
     },
   },
 
   EDUCATION: [
     {
-      DEGREE: "MSc in Software Engineering, 1st",
+      DEGREE: "MSc Computer Science (Software Engineering), 1st",
       INSTITUTION: "Staffordshire University",
-      DURATION: "2023 – 2024",
-      MODULES: "Enterprise Cloud Computing in AWS (83%), Enterprise Software Engineering (80%)",
-      DISSERTATION: "Reinforcement Learning with CF and CBF for Enhanced Personalization",
+      DURATION: "Jul 2024",
+      MODULES: "Enterprise Cloud Computing in AWS, Enterprise Software Engineering",
+      DISSERTATION: "Reinforcement Learning with Collaborative Filtering (CF) and Content-Based Filtering (CBF) for Enhanced Personalization",
     },
     {
       DEGREE: "B.Tech in Computer Science and Engineering, 1st",
       INSTITUTION: "Kannur University",
-      DURATION: "2013 - 2017",
-      MODULES: "Data Structures & Algorithms, Database Management, Software Engineering, AI",
+      DURATION: "Jul 2017",
+      MODULES: "Real-Time Incremental Sentiment Analysis system to process social media comment streams using short-text algorithms",
     },
   ],
 
-  CERTIFICATIONS: [
-    "Oracle Certified Associate, Java SE 8 Programmer",
-    "Automation Academy Certification from UiPath",
-  ],
+  CERTIFICATIONS: [],
 
   ALL_PROJECTS:
     "https://github.com/roshanvrazak",
 
 
   SKILLS: {
-    Languages: ["Java", "TypeScript", "HTML", "CSS", "Node.js"],
-    Frameworks: [
-      "React.js",
-      "Spring Boot",
-      "Java EE",
+    "Languages": [
+      "Java", "Python", "JavaScript", "TypeScript", "SQL", "HTML", "CSS"
     ],
-    Libraries: ["Tailwind CSS", "Ant Design"],
-    "Database & Backend": ["MongoDB", "MySQL", "PostgreSQL", "Oracle", "DynamoDB"],
-    "Cloud & Deployment": ["AWS", "Docker", "CI/CD"],
-    "Tools & Platforms": [
-      "Git",
-      "GitHub",
-      "Postman",
-      "Swagger UI",
-      "Figma",
-      "Visual Studio Code",
+    "Frameworks & Libraries": [
+      "Spring Boot", "FastAPI", "ReactJS", "Laravel", "REST APIs"
     ],
-    Testing: ["JUnit", "Mockito", "TDD"],
-    Analytics: ["Google Analytics", "Google Tag Manager", "Power BI"],
+    "Databases": [
+      "MySQL", "PostgreSQL", "Redis", "DynamoDB"
+    ],
+    "Cloud & DevOps": [
+      "AWS", "Lambda", "S3", "EC2", "IAM", "API Gateway", "Docker", "Jenkins", "GitHub Actions"
+    ],
+    "Testing & Practices": [
+      "JUnit", "Mockito", "TDD", "Integration Testing", "Agile/Scrum", "Technical Documentation"
+    ],
+    "Version Control": [
+      "Git", "GitHub"
+    ],
   },
 };
 

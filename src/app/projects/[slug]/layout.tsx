@@ -51,13 +51,3 @@ export default function ProjectLayout({
   );
 }
 
-DATA.PROJECTS["Smart Access Control System"] = {
-  SLUG: "smart-access-control",
-  DESCRIPTION: [
-    "Proposed a smart access control system integrating ID card access with facial recognition for enhanced security.",
-    "Designed multi-factor authentication using Amazon Rekognition and managed user access with AWS Cognito.",
-    "Implemented secure data storage (Amazon S3, DynamoDB) and serverless processing with AWS Lambda.",
-  ],
-  TECH_STACK: ["AWS", "Amazon Rekognition", "AWS Cognito", "Lambda"],
-  HIDDEN: false,
-};
