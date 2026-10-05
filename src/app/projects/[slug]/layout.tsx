@@ -14,7 +14,7 @@ export async function generateMetadata({
   const resolvedParams = await params;
   const project = getProjectData(resolvedParams.slug);
 
-  if (!project || !project[1] || !project[1].DESCRIPTION || !project[1].IMAGE) {
+  if (!project || !project[1] || !project[1].DESCRIPTION) {
     return {
       title: "Project Not Found",
       description: "The requested project does not exist.",
@@ -43,11 +43,10 @@ export default function ProjectLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="bg-background text-foreground mx-auto px-4 w-full lg:w-2/3 xl:w-1/2 pt-6 sm:pt-12">
+    <div className="site-shell">
       <Navbar />
 
-      <main className="min-h-fit px-4">{children}</main>
+      <main className="min-h-fit">{children}</main>
     </div>
   );
 }
-

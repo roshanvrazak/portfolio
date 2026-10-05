@@ -3,6 +3,7 @@ import {
   MotionValue,
   useMotionValue,
   useTransform,
+  useReducedMotion,
 } from "framer-motion";
 import type React from "react";
 import { Button } from "../ui/button";
@@ -22,6 +23,7 @@ export const MovingElement: React.FC<MovingElementProps> = ({
   toChange = true,
   ariaLabel,
 }) => {
+  const reducedMotion = useReducedMotion();
   const x = useMotionValue(0);
   const y = useMotionValue(0);
   const textX = useTransform(x, (latest) => latest * 2);
@@ -59,6 +61,7 @@ export const MovingElement: React.FC<MovingElementProps> = ({
   return (
     <motion.div
       onPointerMove={(event) => {
+        if (reducedMotion || event.pointerType !== "mouse") return;
         const item = event.currentTarget;
         setTransform(item, event, x, y);
       }}

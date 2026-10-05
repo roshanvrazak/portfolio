@@ -1,6 +1,7 @@
 import { DATA, getProjectData } from "@/app/data";
 import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
+import { TechnologyList } from "@/components/technology-list";
 import { notFound } from "next/navigation";
 
 type PageProps = {
@@ -21,7 +22,7 @@ export default async function Page({ params }: PageProps) {
         <div className="flex flex-col sm:flex-row sm:items-center justify-between">
           <h1 className="text-xl">{project[0]}</h1>
 
-          <p className="flex items-center gap-2 text-sm">
+          <p className="flex items-center gap-2 text-base">
             {project[1].LIVE_PREVIEW && (
               <a
                 className="flex items-center gap-1"
@@ -45,10 +46,12 @@ export default async function Page({ params }: PageProps) {
           </p>
         </div>
 
-        <Image src={project[1].IMAGE} alt={project[0]} className="py-4" />
+        {project[1].IMAGE && (
+          <Image src={project[1].IMAGE} alt={project[0]} className="py-4" />
+        )}
 
         <div className="grid sm:grid-cols-3 gap-4 items-start">
-          <ul className="list-disc pl-3 text-sm text-muted-foreground text-justify sm:col-span-2">
+          <ul className="list-disc pl-3 text-base text-muted-foreground text-left leading-[1.75] space-y-3 sm:col-span-2">
             {project[1].DESCRIPTION.map((desc, index) => (
               <li key={index}>
                 <span>{desc}</span>
@@ -56,20 +59,11 @@ export default async function Page({ params }: PageProps) {
             ))}
           </ul>
 
-          <ul className="flex flex-wrap items-center justify-end gap-2 pl-3">
-            {project[1].TECH_STACK.map((tech, index) => (
-              <span
-                key={index}
-                className="text-xs bg-primary/10 px-2 py-1 rounded"
-              >
-                {tech}
-              </span>
-            ))}
-          </ul>
+          <TechnologyList items={project[1].TECH_STACK} />
         </div>
 
         {project[1].NOTE && (
-          <p className="mt-4 text-sm text-primary/60">{project[1].NOTE}</p>
+          <p className="mt-4 text-base text-primary/60">{project[1].NOTE}</p>
         )}
       </div>
 
@@ -77,7 +71,7 @@ export default async function Page({ params }: PageProps) {
         <a
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center justify-center whitespace-nowrap rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground h-9 px-4 py-2 text-sm text-muted-foreground"
+          className="inline-flex items-center justify-center whitespace-nowrap rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground h-9 px-4 py-2 text-base text-muted-foreground"
           href={DATA.ALL_PROJECTS}
         >
           View all projects

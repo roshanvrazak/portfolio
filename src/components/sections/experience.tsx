@@ -1,5 +1,5 @@
-import { extractDomain } from "@/lib/utils";
 import { ArrowUpRight } from "lucide-react";
+import { TechnologyList } from "@/components/technology-list";
 
 interface IExperienceData {
   WEBSITE: string | null;
@@ -16,60 +16,65 @@ export function Experience({
   data: Record<string, IExperienceData>;
 }) {
   return (
-    <div id="experience" className="py-10">
-      <h2 className="text-base font-medium text-primary/90">experience.</h2>
+    <section id="experience" className="content-section experience-section">
+      <h2 className="section-title">Experience</h2>
 
-      <ul className="mt-4 flex flex-col gap-12 text-base font-normal text-primary/90">
+      <ul className="mt-4 flex flex-col divide-y divide-border text-base font-normal text-primary/90">
         {Object.entries(data).map(([key, value]) => (
-          <li key={key}>
-            <div className="size-full border-l border-muted-foreground pl-4 transition-all duration-300 hover:border-primary">
-              <div className="flex flex-col items-start justify-between sm:flex-row">
+          <li key={key} className="py-8 first:pt-2 sm:py-10">
+            <div className="size-full">
+              <header className="flex flex-col gap-3 sm:flex-row sm:items-baseline sm:justify-between sm:gap-8">
                 <div>
-                  <p className="text-lg text-primary/90">
-                    {value.POSITION}{" "}
-                    <span className="ml-2 rounded bg-secondary px-2 py-1 text-xs inline-block max-sm:mb-2">
-                      {value.LOCATION}
-                    </span>
+                  <h3 className="text-xl font-medium leading-snug tracking-tight text-foreground">
+                    {value.WEBSITE ? (
+                      <a
+                        className="company-link inline-flex items-center gap-1.5"
+                        href={value.WEBSITE}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {key}
+                        <ArrowUpRight
+                          size={13}
+                          className="text-muted-foreground"
+                        />
+                      </a>
+                    ) : (
+                      key
+                    )}
+                  </h3>
+                  <p className="mt-2 text-base text-foreground">
+                    {value.POSITION}
                   </p>
-                  <p className="flex items-center text-sm">
-                    at,{" "}
-                    <a
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="ml-1 flex items-center gap-1"
-                      href={value.WEBSITE || undefined} // Provide undefined if WEBSITE is null
-                    >
-                      {value.WEBSITE ? extractDomain(value.WEBSITE) : "N/A"} <ArrowUpRight size={18} />
-                    </a>
+                  <p className="mt-1 text-[0.9375rem] leading-relaxed text-muted-foreground">
+                    {value.LOCATION}
                   </p>
                 </div>
-                <p className="text-sm text-muted-foreground">
+                <p className="shrink-0 text-[0.9375rem] tabular-nums text-muted-foreground">
                   {value.DURATION}
                 </p>
-              </div>
+              </header>
 
-              <ul className="mt-4 list-disc space-y-1 pl-3 text-sm text-muted-foreground text-justify">
+              <ul className="mt-4 list-disc space-y-3 pl-4 text-[1.0625rem] leading-[1.7] text-muted-foreground text-left">
                 {value.DESCRIPTION.map((desc, index) => (
                   <li key={index}>
-                    <span dangerouslySetInnerHTML={{ __html: desc.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>') }} />
+                    <span
+                      dangerouslySetInnerHTML={{
+                        __html: desc.replace(
+                          /\*\*(.*?)\*\*/g,
+                          "<strong>$1</strong>"
+                        ),
+                      }}
+                    />
                   </li>
                 ))}
               </ul>
 
-              <ul className="mt-2 flex flex-wrap items-center gap-2 pl-3">
-                {value.TECH_STACK.map((tech, index) => (
-                  <li
-                    key={index}
-                    className="rounded bg-muted px-2 py-1 text-xs"
-                  >
-                    {tech}
-                  </li>
-                ))}
-              </ul>
+              <TechnologyList items={value.TECH_STACK} />
             </div>
           </li>
         ))}
       </ul>
-    </div>
+    </section>
   );
 }

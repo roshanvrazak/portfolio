@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import type React from "react";
 
 const DURATION = 0.25;
@@ -13,15 +13,27 @@ export const AnimatedText: React.FC<AnimatedTextProps> = ({
   children,
   href,
 }) => {
+  const reducedMotion = useReducedMotion();
+  if (reducedMotion)
+    return (
+      <a
+        href={href}
+        className="rounded-lg text-sm sm:px-2 sm:py-1 sm:text-base"
+      >
+        {children}
+      </a>
+    );
+
   return (
     <motion.a
       initial="initial"
       whileHover="hovered"
       href={href}
-      className="relative block w-fit leading-[1.2rem] rounded-lg p-0 text-base text-primary/90 whitespace-nowrap sm:px-2 sm:py-1"
+      className="relative block w-fit leading-[1.2rem] rounded-lg p-0 text-sm sm:text-base text-primary/90 whitespace-nowrap sm:px-2 sm:py-1"
     >
       <motion.div
-        className="absolute bottom-0 left-0 right-0 h-px bg-accent"
+        aria-hidden="true"
+        className="absolute bottom-0 left-0 right-0 h-px bg-foreground/50"
         variants={{
           initial: { width: "0%" },
           hovered: { width: "100%" },
@@ -56,6 +68,7 @@ export const AnimatedText: React.FC<AnimatedTextProps> = ({
                 ease: "easeInOut",
                 delay: i * STAGGER,
               }}
+              aria-hidden="true"
               className="block absolute left-0 top-0"
             >
               {l}

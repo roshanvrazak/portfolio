@@ -1,61 +1,59 @@
-import { Github, Linkedin, Mail } from "lucide-react";
-import { MovingElement } from "../navbar";
+"use client";
+
+import { ArrowUpRight, FileText, Github, Linkedin, Mail } from "lucide-react";
+
+import { Button } from "@/components/ui/button";
+import { Magnetic } from "@/components/magnetic";
 
 export function Header({ data }: { data: Record<string, string> }) {
-  const handleChange = (url: string) => {
-    window.open(url, "_blank");
-  };
-
   return (
-    <section className="pt-12">
-      <div className="space-y-2">
-        <p className="text-base font-normal text-muted-foreground">
-          Hi there👋, I&apos;m
-        </p>
-
-        <div>
-          <h1 className="text-4xl font-bold tracking-tight text-primary/90">
-            {data.NAME}
-          </h1>
-          <h2 className="flex flex-col gap-0 text-base font-normal text-primary/90">
-            <p>
-              {data.AGE}, {data.PRONOUN}
-            </p>
-            <p>{data.HEADLINE}</p>
-          </h2>
-        </div>
-
-        <div className="flex items-center gap-2 text-sm">
-          <MovingElement
-            className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground shadow betterhover:hover:bg-primary/90 h-9 px-4 py-2"
-            change={() => handleChange(data.RESUME)}
-            toChange={false}
-            ariaLabel="Resume"
-          >
-            Resume
-          </MovingElement>
-          <div className="flex gap-2">
-            <MovingElement
-              change={() => handleChange(data.EMAIL)}
-              ariaLabel="Email"
-            >
-              <Mail />
-            </MovingElement>
-            <MovingElement
-              change={() => handleChange(data.GITHUB)}
-              ariaLabel="Github"
-            >
-              <Github />
-            </MovingElement>
-            <MovingElement
-              change={() => handleChange(data.LINKEDIN)}
-              ariaLabel="Linkedin"
-            >
-              <Linkedin />
-            </MovingElement>
-          </div>
-        </div>
-      </div>
+    <section className="profile-header">
+      <p className="profile-greeting">
+        Hi there
+        <span className="greeting-wave" aria-hidden="true">
+          👋
+        </span>
+        , I’m
+      </p>
+      <p className="profile-role">
+        {data.AGE} <span aria-hidden="true">·</span> {data.PRONOUN}
+      </p>
+      <h1>{data.NAME}</h1>
+      <p className="profile-intro">{data.HEADLINE}</p>
+      <nav
+        className="profile-actions"
+        aria-label="Contact and professional profiles"
+      >
+        <Magnetic>
+          <Button asChild size="lg" className="h-12 px-5 text-base">
+            <a href={data.RESUME} target="_blank" rel="noopener noreferrer">
+              <FileText aria-hidden="true" /> View CV{" "}
+              <ArrowUpRight aria-hidden="true" />
+            </a>
+          </Button>
+        </Magnetic>
+        <Magnetic>
+          <Button asChild variant="outline" className="h-12 px-4 text-base">
+            <a href={data.LINKEDIN} target="_blank" rel="noopener noreferrer">
+              <Linkedin aria-hidden="true" /> LinkedIn
+            </a>
+          </Button>
+        </Magnetic>
+        <Magnetic>
+          <Button asChild variant="outline" className="h-12 px-4 text-base">
+            <a href={data.GITHUB} target="_blank" rel="noopener noreferrer">
+              <Github aria-hidden="true" /> GitHub
+            </a>
+          </Button>
+        </Magnetic>
+        <Magnetic>
+          <Button asChild variant="ghost" className="h-12 px-4 text-base">
+            <a href={data.EMAIL}>
+              <Mail aria-hidden="true" /> Email
+            </a>
+          </Button>
+        </Magnetic>
+      </nav>
     </section>
   );
 }

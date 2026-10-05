@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { ThemeProvider } from "next-themes";
 import { Outfit } from "next/font/google";
 import "./globals.css";
+import { PointerBackground } from "@/components/pointer-background";
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -12,17 +13,18 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "Roshan Razak | Software Developer",
+  title: "Roshan Razak | Full Stack AI Engineer",
   description:
-    "Software developer specializing in Java,Spring Boot, TypeScript, AWS and DevOps.",
+    "Full-stack AI engineer and former technical team lead building secure AI applications, document search, and internal workflows.",
   openGraph: {
-    title: "Roshan Razak | Software Developer",
+    title: "Roshan Razak | Full Stack AI Engineer",
     description:
-      "Software developer specializing in Java, Spring Boot, TypeScript, AWS and Devops. Experienced in building scalable, high-performance applications.",
+      "Full-stack AI engineer building practical AI tools with Python, TypeScript, and cloud infrastructure.",
     url: "https://roshanvrazak.co.uk",
-    type: "website", 
+    type: "website",
     locale: "en_GB",
-  },};
+  },
+};
 
 export default function RootLayout({
   children,
@@ -31,15 +33,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${outfit.variable}`} suppressHydrationWarning>
-      <body
-        className={`${outfit.className} w-screen min-h-screen m-0 p-0 overflow-x-hidden`}
-      >
+      <body className={`${outfit.className} min-h-screen m-0 p-0`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange
         >
+          <PointerBackground />
           {children}
         </ThemeProvider>
 

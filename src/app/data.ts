@@ -1,5 +1,4 @@
-
-import { StaticImageData } from "next/image";
+import type { StaticImageData } from "next/image";
 import { cache } from "react";
 
 export interface IProjectData {
@@ -9,17 +8,34 @@ export interface IProjectData {
   DESCRIPTION: string[];
   NOTE?: string;
   TECH_STACK: string[];
-  IMAGE: StaticImageData;
+  IMAGE?: StaticImageData;
   HIDDEN: boolean;
+}
+
+export interface IExperienceData {
+  WEBSITE: string | null;
+  POSITION: string;
+  LOCATION: string;
+  DURATION: string;
+  DESCRIPTION: string[];
+  TECH_STACK: string[];
+}
+
+export interface IEducationData {
+  DEGREE: string;
+  INSTITUTION: string;
+  DURATION: string;
+  MODULES?: string;
+  DISSERTATION?: string;
 }
 
 export const DATA = {
   HEADER: {
     NAME: "Roshan Razak",
-    AGE: "AI Engineer",
-    PRONOUN: "United Kingdom",
+    AGE: "Full Stack AI Engineer",
+    PRONOUN: "Calicut, India",
     HEADLINE:
-      "AI Engineer — I build agentic systems and AI-ready infrastructure using LangChain, LangGraph, and RAG pipelines, with a strong foundation in Python backend engineering.",
+      "I build practical AI tools that turn documents and data into useful workflows, with secure foundations, measurable behaviour, and room for human judgement.",
     RESUME: "/roshan-razak.pdf",
     EMAIL: "mailto:roshan.razak@outlook.com",
     GITHUB: "https://github.com/roshanvrazak",
@@ -28,150 +44,257 @@ export const DATA = {
 
   ABOUT_ME: {
     INTRO:
-      "I am an AI Engineer with commercial experience building agentic systems and AI-ready infrastructure. I hold an MSc in Software Engineering and am driven by a commitment to reliable, production-grade AI systems that are easy to evaluate and maintain.",
+      "I'm a full-stack AI engineer and former technical team lead with 6.5+ years of production software experience, spanning enterprise consulting, startup teams, and freelance delivery.",
     EXPERTISE:
-      "My technical foundation covers Python async and Pydantic, LangChain and LangGraph for orchestrating agentic workflows, RAG pipelines backed by vector databases (pgvector, ChromaDB), and FastAPI for serving AI inference endpoints on AWS.",
-    BLOG: "I am deeply interested in LLM evaluation, prompt engineering, and AI infrastructure. Beyond applied AI, I maintain a homelab for running local models with Ollama and experimenting with infrastructure-as-code tooling.",
+      "I work across the interface, backend, and AI layer to help people search information and get work done. That means grounding answers in source documents, validating model outputs, testing for prompt injection, and keeping usage and cost visible. My MSc in Computer Science complements a hands-on background in Python, TypeScript, and Java.",
+    BLOG: "Outside product work, I run a Proxmox lab for local models, internal tools, and automation. I use Claude Code with delegated agents, tests, and automated reviews, and explore chat-controlled operations with Hermes and OpenClaw alongside n8n workflows.",
   },
 
   EXPERIENCE: {
     "Cawosh Ltd": {
       WEBSITE: "https://cawosh.com",
-      POSITION: "Software Engineer",
-      LOCATION: "United Kingdom",
-      DURATION: "Aug 2024 – Present",
+      POSITION: "Software Engineer / Technical Team Lead",
+      LOCATION: "London, United Kingdom · Full-time",
+      DURATION: "Aug 2024 – Sep 2026",
       DESCRIPTION: [
-        "**AI-Ready Services:** Developed Python backend services on AWS with async data processing pipelines and AI-ready inference endpoints, contributing to feature delivery across the full development lifecycle.",
-        "**ETL & ML Workflows:** Built ETL pipelines feeding structured and unstructured data into downstream ML workflows, including document parsing and normalisation for AI consumption.",
-        "**Performance Fix:** Identified and resolved a bottleneck in a serverless data pipeline (AWS Lambda), cutting monthly infrastructure costs by 45% with no loss in processing speed.",
-        "**Testing:** Wrote and maintained unit and integration tests with Python test frameworks for AI-serving infrastructure, improving deployment confidence and reducing regression risk.",
-        "**Security & Validation:** Automated secrets rotation via AWS IAM and enforced strict type-hinting and Pydantic validation patterns across all backend services.",
+        "**Internal Platforms:** Connected project workflows through cloud services and APIs, providing a dependable foundation for internal tools and AI features.",
+        "**Document Processing:** Built a pipeline that converted PDFs and spreadsheets into validated, consistent data, handling approximately 5,000 documents each month.",
+        "**Technical Leadership:** Owned the roadmap across product and operations, translating team needs into priorities and guiding architecture, technical explorations, planning, and developer reviews.",
+        "**Reliable Delivery:** Maintained backend services with an emphasis on secure access, performance, and automated testing.",
       ],
-      TECH_STACK: ["Python", "FastAPI", "Pydantic", "AWS Lambda", "API Gateway", "AWS"],
+      TECH_STACK: [
+        "Backend Services",
+        "APIs",
+        "Cloud Applications",
+        "Document Processing",
+        "Automated Testing",
+      ],
     },
-    "Capgemini Engineering": {
+    "Xabium Software Solutions": {
+      WEBSITE: "https://people.xabium.co.uk",
+      POSITION: "Full Stack AI Engineer",
+      LOCATION: "Remote, United Kingdom · Freelance",
+      DURATION: "Nov 2025 – Sep 2026",
+      DESCRIPTION: [
+        "**AI Workflows:** Delivered agents for the People platform to support multi-step tasks, including onboarding and employee dashboard interactions, using Claude, Antigravity, and custom skills.",
+        "**Structured Generation:** Refined prompts, context limits, and examples to produce dependable UI structures for a no-code landing page builder and an internal HR application.",
+        "**Integration & Evaluation:** Connected LLM APIs and embedding workflows across frontend and backend systems, adding evaluations for prompt injection, output quality, and production latency.",
+        "**Team Delivery:** Contributed through Scrum planning and reviews, with CodeRabbit and Qodo checks to support maintainable, secure feature releases.",
+      ],
+      TECH_STACK: [
+        "Claude",
+        "Antigravity",
+        "LLM APIs",
+        "Embeddings",
+        "AI Evaluation",
+        "CodeRabbit",
+        "Qodo",
+      ],
+    },
+    "Capgemini Technology Services": {
       WEBSITE: "https://www.capgemini.com",
-      POSITION: "Associate Consultant",
-      LOCATION: "India",
+      POSITION: "Associate Consultant / Product Owner",
+      LOCATION: "Bangalore, India",
       DURATION: "Oct 2018 – Feb 2023",
       DESCRIPTION: [
-        "**Backend Development:** Built and maintained Java / Spring Boot microservices for high-volume financial transaction processing, resolving a critical sequencing bug that caused data drift.",
-        "**Database Optimisation:** Re-architected long-running PostgreSQL queries for a global banking client, improving data retrieval speeds by 40% through strategic indexing.",
-        "**Testing Culture:** Established JUnit test suites and coding standards adopted team-wide, reducing production-level bugs by 25% within 18 months. Awarded STAR Performer recognition.",
+        "**Product Ownership:** Served as the Maximo specialist and application contact for an asset management client, coordinating stakeholder priorities, development, operations, and junior consultants.",
+        "**Transaction Processing:** Maintained Java microservices for high-volume financial workloads and corrected a sequencing defect that caused data drift.",
+        "**Database Performance:** Improved retrieval speeds by 40% for a banking client through PostgreSQL query redesign and targeted indexing.",
+        "**Engineering Standards:** Introduced shared JUnit suites and coding standards that helped reduce production bugs by 25% over 18 months, earning STAR Performer recognition.",
       ],
-      TECH_STACK: ["Java", "Spring Boot", "Microservices", "PostgreSQL", "JUnit", "TDD"],
+      TECH_STACK: [
+        "Java",
+        "Microservices",
+        "PostgreSQL",
+        "JUnit",
+        "Maximo",
+        "Product Ownership",
+      ],
     },
-  },
+    "MEAR Enterprises": {
+      WEBSITE: null,
+      POSITION: "Internship Trainee",
+      LOCATION: "Kerala, India",
+      DURATION: "Jun 2017 – Dec 2017",
+      DESCRIPTION: [
+        "**Web Development:** Built web application features with Java, Spring Boot, Spring MVC, and JavaScript during a software development internship.",
+        "**Data Layer:** Designed SQL databases and wrote queries to support application functionality.",
+      ],
+      TECH_STACK: ["Java", "Spring Boot", "Spring MVC", "JavaScript", "SQL"],
+    },
+  } satisfies Record<string, IExperienceData>,
 
   PROJECTS: {
-    "Agentic AI Underwriting Pipeline": {
-      SLUG: "agentic-ai-underwriting-pipeline",
+    "Unsheet — Spreadsheet Dashboards": {
+      SLUG: "unsheet",
+      LIVE_PREVIEW: "https://unsheet.netlify.app/",
+      GITHUB: "https://github.com/roshanvrazak/UnSheet",
       DESCRIPTION: [
-        "**Multi-Step Agent Orchestration:** Designed a LangGraph-based agentic pipeline that autonomously retrieves, reasons over, and synthesises insurance policy documents to produce structured underwriting recommendations.",
-        "**RAG Architecture:** Implemented a Retrieval-Augmented Generation layer using ChromaDB as the vector store, with document chunking, embedding, and semantic search to ground LLM responses in authoritative source material.",
-        "**FastAPI Inference Layer:** Exposed the agent workflow via a FastAPI service with Pydantic-validated request/response schemas, enabling clean integration with downstream systems.",
-        "**Evaluation & Observability:** Built an LLM evaluation harness to measure retrieval precision and answer faithfulness, enabling iterative prompt and pipeline improvements.",
+        "From Sheets to Interfaces: Built a local-first tool that turns spreadsheet data into interactive dashboards with AI, keeping browser-based analytics central to the experience.",
+        "Validated Generation: Used Zod to check model-generated JSON before it becomes a UI, combining the Vercel AI SDK with DuckDB-WASM for in-browser analysis.",
+        "Privacy & Security: Implemented more than 14 security mitigations to protect an AI-assisted data workflow.",
       ],
-      TECH_STACK: ["LangGraph", "RAG", "FastAPI", "ChromaDB", "Pydantic", "Python"],
+      TECH_STACK: ["TypeScript", "Zod", "DuckDB-WASM", "Vercel AI SDK"],
       HIDDEN: false,
     },
-    "MemoryMesh — Multi-Tenant Conversational AI Platform": {
-      SLUG: "memorymesh-conversational-ai",
-      GITHUB: "https://github.com/roshanvrazak/memorymesh",
+    "Product Catalogue Chat": {
+      SLUG: "product-catalogue-chat",
+      LIVE_PREVIEW: "https://catalog-chat.vercel.app/",
+      GITHUB: "https://github.com/roshanvrazak/CatalogChat",
       DESCRIPTION: [
-        "**Persistent Memory Architecture:** Built a multi-tenant conversational AI platform using LangChain with per-user memory isolation, storing conversation history and semantic embeddings in pgvector (PostgreSQL) for long-term recall.",
-        "**Session & Cache Layer:** Implemented Redis-backed session management to serve low-latency context retrieval for active conversations without hitting the primary database on every turn.",
-        "**Full-Stack Delivery:** Developed a FastAPI backend with async endpoints and a React frontend, containerised with Docker for consistent local and cloud deployment.",
-        "**Multi-Tenancy & Auth:** Designed tenant-scoped data partitioning and authentication middleware to ensure strict conversation isolation across users.",
+        "Answers with Sources: Created a serverless RAG application for navigating complex product PDFs, with citations that let users check the evidence behind an answer.",
+        "Hybrid Retrieval: Combined vector and full-text search with Supabase pgvector to retrieve relevant catalogue content.",
+        "Resumable Ingestion: Processed documents in batches so ingestion can continue after an interruption.",
       ],
-      TECH_STACK: ["LangChain", "FastAPI", "pgvector", "Redis", "PostgreSQL", "Docker", "React", "Python"],
+      TECH_STACK: [
+        "Next.js 15",
+        "Supabase",
+        "pgvector",
+        "RAG",
+        "Hybrid Search",
+      ],
+      HIDDEN: false,
+    },
+    "Plato — LLM Tracing & Observability": {
+      SLUG: "plato",
+      GITHUB: "https://github.com/roshanvrazak/plato",
+      DESCRIPTION: [
+        "LLM Gateway: Built a Python gateway for multiple tenants, making AI application behaviour easier to trace and inspect with OpenTelemetry.",
+        "Usage Controls: Added Redis-backed rate limits and automatic daily budget enforcement to keep usage within defined limits.",
+      ],
+      TECH_STACK: ["Python", "OpenTelemetry", "Redis", "LLM Gateway"],
+      HIDDEN: false,
+    },
+    "Personal Portfolio": {
+      SLUG: "portfolio",
+      GITHUB: "https://github.com/roshanvrazak/portfolio",
+      LIVE_PREVIEW: "https://roshanvrazak.co.uk",
+      DESCRIPTION: [
+        "Web Experience: Built this portfolio with Next.js 15 and TypeScript, using dynamic project pages and a reusable interface system.",
+        "Self-Hosted Delivery: Containerised the site for a Proxmox environment, with Cloudflare Tunnels and Tailscale supporting secure access and hands-on hardware and network management.",
+      ],
+      TECH_STACK: [
+        "Next.js 15",
+        "TypeScript",
+        "Tailwind CSS",
+        "Docker",
+        "Proxmox",
+        "Cloudflare Tunnels",
+        "Tailscale",
+      ],
       HIDDEN: false,
     },
     "Homelab Infrastructure as Code": {
       SLUG: "homelab-infrastructure-as-code",
       DESCRIPTION: [
-        "**Self-Hosted AI Lab:** Provisioned a Proxmox-based homelab using Terraform for infrastructure-as-code, running Ollama to serve local LLMs (Mistral, LLaMA) for private AI experimentation and model evaluation.",
-        "**CI/CD & Secure Access:** Deployed a Jenkins CI/CD pipeline and Nginx reverse proxy with Cloudflare Tunnels for secure remote access, enabling automated build and deployment workflows across containerised services.",
+        "Private Infrastructure: Run AI services and internal tools on Proxmox, using Terraform and Ansible to provision the lab and Cloudflare Tunnels and Tailscale for remote access without open ports.",
+        "Everyday Automation: Use n8n and scheduled jobs for document processing, notifications, and backups, with Hermes and OpenClaw agents accessible through Telegram and Discord.",
+        "Operational Safeguards: Protect services with environment-injected secrets, MFA, access controls, WAF rules, and container image scanning.",
       ],
-      TECH_STACK: ["Proxmox", "Terraform", "Docker", "Jenkins", "Ollama", "Cloudflare Tunnels", "Nginx"],
+      TECH_STACK: [
+        "Proxmox",
+        "Terraform",
+        "Ansible",
+        "Docker",
+        "Ollama",
+        "Cloudflare Tunnels",
+        "Tailscale",
+        "n8n",
+        "Hermes",
+        "OpenClaw",
+      ],
       HIDDEN: false,
     },
-    "DayPlanner — Intelligent Task Management System": {
-      SLUG: "day-planner",
-      GITHUB: "https://github.com/roshanvrazak/DayPlanner",
-      DESCRIPTION: [
-        "**Full-Stack Architecture:** Developed a comprehensive day planning application using Next.js and TypeScript, focusing on high-performance task management and user productivity.",
-        "**Database & ORM:** Integrated Prisma ORM with PostgreSQL to handle complex task relations, ensuring efficient data persistence and type-safe database queries.",
-        "**Containerised Deployment:** Fully Dockerised the application with custom multi-stage Dockerfiles and docker-compose configurations for seamless development and production parity.",
-      ],
-      TECH_STACK: ["Next.js", "TypeScript", "Prisma", "PostgreSQL", "Docker", "Tailwind CSS"],
-      HIDDEN: false,
-    },
-    "Professional AI Portfolio — Modern & Minimalist": {
-      SLUG: "portfolio",
-      GITHUB: "https://github.com/roshanvrazak/portfolio",
-      LIVE_PREVIEW: "https://roshanvrazak.co.uk",
-      DESCRIPTION: [
-        "**High-Performance Frontend:** Built a state-of-the-art portfolio using Next.js 15 and TypeScript, achieving exceptional performance scores and smooth client-side transitions.",
-        "**Modern UI/UX:** Implemented a minimalist, dark-themed design system using shadcn/ui and Tailwind CSS, featuring subtle Framer Motion animations for a premium user experience.",
-        "**Deployment & Infrastructure:** Automated deployment via Vercel with integrated SEO best practices, meta-tag optimization, and dynamic sitemap generation.",
-      ],
-      TECH_STACK: ["Next.js 15", "TypeScript", "Shadcn/UI", "Tailwind CSS", "Framer Motion", "Vercel"],
-      HIDDEN: false,
-    },
-  },
+  } satisfies Record<string, IProjectData>,
 
   EDUCATION: [
     {
-      DEGREE: "MSc Computer Science (Software Engineering), 1st",
+      DEGREE: "MSc Computer Science (Software Engineering)",
       INSTITUTION: "Staffordshire University",
       DURATION: "Jul 2024",
-      MODULES: "Enterprise Cloud Computing in AWS, Enterprise Software Engineering",
-      DISSERTATION: "Designed and evaluated a Hybrid Reinforcement Learning system combining Collaborative Filtering and Content-Based Filtering for enhanced personalisation",
+      DISSERTATION:
+        "Built a recommendation system combining reinforcement learning with collaborative and content-based filtering, improving hit-rate and NDCG compared with either approach alone",
     },
     {
-      DEGREE: "B.Tech in Computer Science and Engineering, 1st",
+      DEGREE: "B.Tech in Computer Science and Engineering",
       INSTITUTION: "Kannur University",
       DURATION: "Jul 2017",
-      MODULES: "Project RISTS — Real-Time Incremental Sentiment Analysis system designed to process high-velocity social media streams using short-text algorithms",
+      DISSERTATION:
+        "RISTS: a real-time social media summarisation project using incremental clustering to process streaming data at scale",
     },
+  ] satisfies IEducationData[],
+
+  CERTIFICATIONS: [
+    "GDPR and Data Governance training",
+    "DevOps and DevSecOps training",
+    "Oracle Certified Java Programmer Associate",
+    "Full Stack Java Bootcamp — Jspiders, Bangalore",
   ],
 
-  CERTIFICATIONS: [],
-
-  ALL_PROJECTS:
-    "https://github.com/roshanvrazak",
+  ALL_PROJECTS: "https://github.com/roshanvrazak",
 
   SKILLS: {
-    "Core Programming": [
-      "Python", "Java", "JavaScript", "TypeScript", "SQL", "Pydantic",
+    "AI & Integration": [
+      "LLM Applications",
+      "RAG",
+      "AI Agents",
+      "MCP",
+      "Prompt Engineering",
+      "Claude",
+      "OpenRouter",
+      "Ollama",
     ],
-    "AI & Orchestration": [
-      "LangChain", "LangGraph", "RAG Pipelines", "Agentic Workflows", "Prompt Engineering", "LLM Evaluation", "Ollama",
+    "Quality & Safety": [
+      "Guardrails",
+      "Prompt Injection Defence",
+      "AI Evaluation",
+      "Human Review",
+      "Application Tracing",
+      "Automated Testing",
     ],
-    "Vector Databases": [
-      "pgvector", "ChromaDB", "Embedding Models", "Semantic Search",
+    "Search & Data": [
+      "Embeddings",
+      "pgvector",
+      "Hybrid Search",
+      "PostgreSQL",
+      "Supabase",
+      "Redis",
+      "DynamoDB",
     ],
-    "Backend & Web": [
-      "Next.js", "ReactJS", "FastAPI", "Spring Boot", "Laravel", "Django", "shadcn/ui", "REST APIs",
+    "Application Development": [
+      "Python",
+      "TypeScript",
+      "Java",
+      "FastAPI",
+      "Django",
+      "React",
+      "Next.js",
+      "Spring Boot",
     ],
-    "Databases": [
-      "PostgreSQL", "Prisma", "MySQL", "Redis", "DynamoDB",
+    "Delivery & Infrastructure": [
+      "Docker",
+      "Terraform",
+      "Ansible",
+      "CI/CD",
+      "Proxmox",
+      "Cloudflare Tunnels",
+      "Tailscale",
+      "n8n",
+      "Vercel",
+      "Netlify",
     ],
-    "DevOps & Infrastructure": [
-      "Docker", "Kubernetes", "Terraform", "Jenkins", "GitHub Actions", "AWS Lambda", "S3", "EC2", "Bedrock", "CI/CD",
-    ],
-  },
+    "AWS & Cloud": ["AWS", "Bedrock", "Lambda", "S3", "Cognito", "CloudWatch"],
+  } satisfies Record<string, string[]>,
 };
 
+/** All publicly visible projects, keyed by display name. */
+export function getVisibleProjects(): [string, IProjectData][] {
+  return Object.entries(DATA.PROJECTS).filter(([, project]) => !project.HIDDEN);
+}
+
 export const getProjectData = cache(
-  (title: string) =>
-    Object.entries(DATA.PROJECTS).find(
-      ([, value]) => value.SLUG === title && !value.HIDDEN
-    ) as [string, IProjectData] | undefined
+  (slug: string): [string, IProjectData] | undefined =>
+    getVisibleProjects().find(([, project]) => project.SLUG === slug)
 );
 
 export default DATA;
-
-
-
